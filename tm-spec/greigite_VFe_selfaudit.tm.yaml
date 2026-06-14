@@ -1,0 +1,105 @@
+# TM-Spec v0.3 artefact: greigite Fe3S4 V_Fe + S-H hop NEB -- the in-band gate
+# SELF-AUDIT (manuscript sec.6). The gate is applied to our own converged 7-image
+# production band to test whether the headline 1.86 eV barrier is itself well-posed,
+# and returns GO: |M_abs| flat across the band, the per-site sign-vector overlap
+# between the two endpoints is S = 1.0 (no Fe site changes its spin sign), so the
+# ferrimagnetic order is preserved and the high barrier is geometric, not a
+# sheet-crossing artefact. Shows the gate validates a barrier, not only vetoes one.
+#
+# Numbers: manuscript sec.6 (M_abs 75.3-75.5 uB, max adjacent dM_abs ~0.14 uB, net
+# moment dip ~0.6 uB at the saddle, S = 1.0 over 23 Fe). Structure: companion record
+# tm.greig.vfe.neb.2026-06-04 (mlip-vs-dft-iron-sulfides).
+
+spec: tm-spec/0.3
+kind: NEBCalculation
+id: tm.greigite.vfe.selfaudit.2026-06-04
+schema_url: https://exopoiesis.github.io/tm-spec/0.3.json
+
+# -- 1. STRUCTURE ---------------------------------------------------------
+structure:
+  formula: Fe23S32H1            # 56-atom inverse-spinel cell: Fe24S32 minus 1 V_Fe + 1 H
+  space_group: { number: 227, symbol: Fd-3m }
+  pbc: [true, true, true]
+
+# -- 2. DEFECTS -----------------------------------------------------------
+defects:
+  population:
+    V_Fe:  { count: 1, site: octahedral_16d }
+    H_int: { count: 1, site: S_adjacent_cavity }
+
+# -- 3. MAGNETIC STATE ----------------------------------------------------
+magnetic:
+  state: ferri                  # antiparallel unequal tet (Fe3+) / oct (Fe2+/3+) sublattices
+  collinear: true
+  notes: "M_total ~ -24 uB/cell; the migrant is the proton at a static V_Fe, so Fe order is fixed."
+
+# -- 4. CALCULATION -------------------------------------------------------
+calculation:
+  method: DFT
+  level:
+    xc: PBE                     # ferri order reproduced at U = 0; robust to U (sec.7.5)
+    basis: { kind: plane_waves, cutoff_Ry: 80, rho_cutoff_Ry: 320 }
+    pseudopotential: ONCV PBE
+    spin: collinear             # nspin = 2
+  code: { name: QuantumESPRESSO, version: "7.5" }
+
+# -- 5. WORKFLOW (NEB) ----------------------------------------------------
+workflow:
+  kind: NEB
+  stage: production
+  n_images: 7
+  optimizer: FIRE
+  prewrap: idpp
+
+# -- 6. PRE-FLIGHT / IN-BAND SELF-AUDIT -----------------------------------
+preflight:
+  engine: { name: prodromos, version: "0.1.0" }
+  verdict: GO
+  confidence: high
+  gates:
+    - id: M0_electron_parity
+      verdict: NSPIN2
+      confidence: high
+      reasons: ["Open-shell Fe ferrimagnet -> spin-polarized treatment."]
+    - id: inband_dM_gate
+      verdict: GO
+      confidence: high
+      observed:
+        M_abs_range_uB: [75.3, 75.5]
+        max_adjacent_dM_abs_uB: 0.14
+        t_abs_uB: 0.5
+        net_moment_dip_uB: 0.6      # smooth, symmetric at the saddle (magnetoelastic)
+        endpoint_dM_total_uB: 0.0
+      reasons:
+        - "Absolute magnetization flat across the band (largest adjacent dM_abs 0.14 << 0.5)."
+        - "Net moment dips ~0.6 uB smoothly at the saddle (magnetoelastic, not a discontinuity)."
+    - id: sign_vector
+      verdict: GO                 # S = 1.0 -> no sublattice sign change
+      confidence: high
+      observed: { S: 1.0, n_mag_sites: 23 }
+      reasons:
+        - "Per-site sign-vector overlap S = 1.0 over all 23 Fe: no site changes spin sign."
+        - "Ferrimagnetic order preserved along the entire path -> single sheet."
+
+# -- 7. RESULTS -----------------------------------------------------------
+results:
+  Ea_forward_eV: 1.86
+  delta_E_rxn_eV: 0.0
+  status: RETROSPECTIVE          # self-audit of a converged production band
+  paper_quotable: true
+  notes: >
+    The 1.86 eV barrier is single-sheet (S = 1.0): geometric/structural, not a
+    sheet-crossing artefact. The solid-state analog of Zahner's same-spin-row GO;
+    shows the gate validates as well as vetoes. Motivates the preference for dM_abs
+    over dM_total (ferri net moment partially compensates).
+
+# -- 8. SANITY GATES (post-hoc) -------------------------------------------
+sanity:
+  - { id: G05_scf_converged, rule: "all images SCF converged",        pass: true }
+  - { id: G_ferri_preserved, rule: "S = 1.0 (no Fe sign flip)",        observed: 1.0, pass: true }
+
+# -- 9. PROVENANCE --------------------------------------------------------
+provenance:
+  date: "2026-06-04"
+  author: igor@exopoiesis.space
+  related: tm.greig.vfe.neb.2026-06-04   # structure/barrier record (Paper #1 repo)

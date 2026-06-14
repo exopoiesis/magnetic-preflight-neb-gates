@@ -1,0 +1,331 @@
+[
+  {
+    "code": "0.120",
+    "family": "Fe-S",
+    "formula": "LiFe(SO4)2",
+    "sg": 14,
+    "state": "AFM-G",
+    "bns": "P2_1/c",
+    "magmoms": {
+      "Fe1": 4.33
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.128",
+    "family": "Fe-S",
+    "formula": "FeSO4F",
+    "sg": 15,
+    "state": "AFM-G",
+    "bns": "C2'/c'",
+    "magmoms": {
+      "Fe1": 4.32
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.243",
+    "family": "Fe-S",
+    "formula": "Fe2Li4O16S4",
+    "sg": 61,
+    "state": "AFM-G",
+    "bns": "P2_1'/c",
+    "magmoms": {
+      "Fe1_1": 2.984,
+      "Fe1_2": 2.984
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.245",
+    "family": "Fe-S",
+    "formula": "Fe2Li4O16S4",
+    "sg": 61,
+    "state": "AFM-G",
+    "bns": "P2_1'/c",
+    "magmoms": {
+      "Fe_1": 4.817,
+      "Fe_2": 4.817
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.246",
+    "family": "Fe-S",
+    "formula": "FeLiO8S2",
+    "sg": 61,
+    "state": "AFM-G",
+    "bns": "Pb'c'a",
+    "magmoms": {
+      "Fe": 4.12
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.613",
+    "family": "Fe-S",
+    "formula": "CrFeS",
+    "sg": 227,
+    "state": "ferri",
+    "bns": "I4_1/am'd",
+    "magmoms": {
+      "Fe1": 3.52,
+      "Cr1": 2.72
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.614",
+    "family": "Fe-S",
+    "formula": "CrFeS",
+    "sg": 227,
+    "state": "ferri",
+    "bns": "I4_1/am'd",
+    "magmoms": {
+      "Fe1": 3.69,
+      "Cr1": 2.64
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.615",
+    "family": "Fe-S",
+    "formula": "CrFeS",
+    "sg": 227,
+    "state": "ferri",
+    "bns": "I4_1/am'd",
+    "magmoms": {
+      "Fe1": 3.72,
+      "Cr1": 2.63
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.633",
+    "family": "Fe-S",
+    "formula": "FeKS",
+    "sg": 15,
+    "state": "AFM-G",
+    "bns": "C2'/c",
+    "magmoms": {
+      "Fe1": 1.698
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.636",
+    "family": "Fe-S",
+    "formula": "FeRbS",
+    "sg": 15,
+    "state": "AFM-G",
+    "bns": "C2'/c",
+    "magmoms": {
+      "Fe1": 1.523
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.760",
+    "family": "Fe-S",
+    "formula": "FeHSO5",
+    "sg": 15,
+    "state": "AFM-G",
+    "bns": "C2'/c",
+    "magmoms": {
+      "Fe1": 4.09
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.762",
+    "family": "Fe-S",
+    "formula": "SrFe2S2O",
+    "sg": 59,
+    "state": "AFM-G",
+    "bns": "Pm'm'n",
+    "magmoms": {
+      "Fe1": 3.314
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.801",
+    "family": "Fe-S",
+    "formula": "Tl3Fe2S4",
+    "sg": 62,
+    "state": "AFM-G",
+    "bns": "Pnma",
+    "magmoms": {
+      "Fe1": 1.52
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.802",
+    "family": "Fe-S",
+    "formula": "CuFeS2",
+    "sg": 122,
+    "state": "AFM-G",
+    "bns": "I-42d",
+    "magmoms": {
+      "Fe1": 3.85
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.987",
+    "family": "Fe-S",
+    "formula": "Ba1Fe2S2O",
+    "sg": 59,
+    "state": "AFM-G",
+    "bns": "Pm'm'n",
+    "magmoms": {
+      "Fe1": 3.17
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.1007",
+    "family": "Fe-S",
+    "formula": "Fe0.25Nb1S2",
+    "sg": 194,
+    "state": "AFM-G",
+    "bns": "P6_3'/m'm'c",
+    "magmoms": {
+      "Fe1": 3.51
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.1051",
+    "family": "Fe-S",
+    "formula": "Fe3S4",
+    "sg": 227,
+    "state": "FM",
+    "bns": "I4_1/am'd",
+    "magmoms": {
+      "Fe1": 3.16,
+      "Fe2": 3.24
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.1052",
+    "family": "Fe-S",
+    "formula": "Fe3S4",
+    "sg": 227,
+    "state": "FM",
+    "bns": "I4_1/am'd",
+    "magmoms": {
+      "Fe1": 3.2,
+      "Fe2": 3.19
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.1053",
+    "family": "Fe-S",
+    "formula": "Fe3S4",
+    "sg": 227,
+    "state": "FM",
+    "bns": "I4_1/am'd",
+    "magmoms": {
+      "Fe1": 3.19,
+      "Fe2": 3.16
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "code": "0.1054",
+    "family": "Fe-S",
+    "formula": "Fe3S4",
+    "sg": 227,
+    "state": "FM",
+    "bns": "I4_1/am'd",
+    "magmoms": {
+      "Fe1": 3.2,
+      "Fe2": 3.08
+    },
+    "k": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]

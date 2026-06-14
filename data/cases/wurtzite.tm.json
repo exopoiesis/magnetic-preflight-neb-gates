@@ -1,0 +1,98 @@
+{
+  "spec": "tm-spec/0.3",
+  "kind": "SinglePointCalculation",
+  "id": "tm.mp.mp-561286.2026-06-02",
+  "schema_url": "https://exopoiesis.github.io/tm-spec/0.3.json",
+  "structure": {
+    "formula": "ZnS",
+    "chemical_formula_reduced": "ZnS",
+    "pbc": [
+      true,
+      true,
+      true
+    ],
+    "geometry_origin": "dft_relaxed",
+    "space_group": {
+      "number": 186
+    }
+  },
+  "calculation": {
+    "method": "DFT",
+    "code": {
+      "name": "VASP"
+    }
+  },
+  "magnetic": {
+    "state": "NM",
+    "collinear": true,
+    "magmoms_uB": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0,
+      "10": 0.0,
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.0,
+      "14": 0.0,
+      "15": 0.0,
+      "16": 0.0,
+      "17": 0.0,
+      "18": 0.0,
+      "19": 0.0,
+      "20": 0.0,
+      "21": 0.0,
+      "22": 0.0,
+      "23": 0.0,
+      "24": 0.0,
+      "25": 0.0,
+      "26": 0.0,
+      "27": 0.0,
+      "28": 0.0,
+      "29": 0.0,
+      "30": 0.0,
+      "31": 0.0,
+      "32": 0.0,
+      "33": 0.0,
+      "34": 0.0,
+      "35": 0.0,
+      "36": 0.0,
+      "37": 0.0,
+      "38": 0.0,
+      "39": 0.0
+    }
+  },
+  "results": {
+    "status": "PRELIMINARY",
+    "paper_quotable": false,
+    "notes": "Imported from Materials Project (computed magnetic ground state); XC = MP default GGA/GGA+U (not re-derived). Structure-level magnetic import."
+  },
+  "sanity": [
+    {
+      "id": "G09_geometry_origin",
+      "rule": "geometry_origin dft_relaxed/dft_static",
+      "observed": "dft_relaxed",
+      "pass": true
+    }
+  ],
+  "provenance": {
+    "date": "2026-06-02",
+    "author": "import@mp",
+    "import_source": {
+      "archive": "materials_project",
+      "entry_id": "mp-561286",
+      "url": "https://next-gen.materialsproject.org/materials/mp-561286",
+      "importer": "mp_client.mp_to_tm_spec@0.1"
+    },
+    "compute": {
+      "host": "mp-api",
+      "cost_usd": 0.0
+    }
+  }
+}

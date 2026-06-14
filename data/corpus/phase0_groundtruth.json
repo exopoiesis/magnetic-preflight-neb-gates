@@ -1,0 +1,229 @@
+[
+  {
+    "mineral": "pyrite",
+    "elements": [
+      "Fe",
+      "S"
+    ],
+    "formula": "FeS2",
+    "space_group": 205,
+    "textbook_magnetic": "NM",
+    "n_entries_at_sg": 6,
+    "entry_id": "08cB3bjJeqMhcfVmOsRTLumSj5RZ",
+    "xc": "GGA",
+    "formula_descriptive": "FeS2",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "marcasite",
+    "elements": [
+      "Fe",
+      "S"
+    ],
+    "formula": "FeS2",
+    "space_group": 58,
+    "textbook_magnetic": "NM",
+    "n_entries_at_sg": 22,
+    "entry_id": "FVD-mbn1SPpWXF4jTgtlrBJruU53",
+    "xc": "GGA",
+    "formula_descriptive": "FeS2",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "troilite",
+    "elements": [
+      "Fe",
+      "S"
+    ],
+    "formula": "FeS",
+    "space_group": 194,
+    "textbook_magnetic": "AFM",
+    "n_entries_at_sg": 8,
+    "entry_id": "KhK757BAH-3Trj6gwwp1sQDzrHx2",
+    "xc": "GGA",
+    "formula_descriptive": "Fe2S2",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "mackinawite",
+    "elements": [
+      "Fe",
+      "S"
+    ],
+    "formula": "FeS",
+    "space_group": 129,
+    "textbook_magnetic": "NM",
+    "n_entries_at_sg": 14,
+    "entry_id": "3KOhbCtRCYkR8piUPfamEeZ5Vdop",
+    "xc": "GGA",
+    "formula_descriptive": "FeS",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "greigite",
+    "elements": [
+      "Fe",
+      "S"
+    ],
+    "formula": "Fe3S4",
+    "space_group": 227,
+    "textbook_magnetic": "FERRI",
+    "n_entries_at_sg": 7,
+    "entry_id": "7FgZMAMS7th1T7XYacNKlbRVwnM0",
+    "xc": "GGA",
+    "formula_descriptive": "Fe3S4",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "chalcopyrite",
+    "elements": [
+      "Cu",
+      "Fe",
+      "S"
+    ],
+    "formula": "CuFeS2",
+    "space_group": 122,
+    "textbook_magnetic": "AFM",
+    "n_entries_at_sg": 10,
+    "entry_id": "O0s5vvElvSvLzSEcIOzrNaLI6upP",
+    "xc": "GGA",
+    "formula_descriptive": "FeCuS2",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "cattierite",
+    "elements": [
+      "Co",
+      "S"
+    ],
+    "formula": "CoS2",
+    "space_group": 205,
+    "textbook_magnetic": "FM",
+    "n_entries_at_sg": 14,
+    "entry_id": "6Mxn2IyvqKi10_PhP4oWz-rxa-v8",
+    "xc": "GGA",
+    "formula_descriptive": "CoS2",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "vaesite",
+    "elements": [
+      "Ni",
+      "S"
+    ],
+    "formula": "NiS2",
+    "space_group": 205,
+    "textbook_magnetic": "AFM",
+    "n_entries_at_sg": 8,
+    "entry_id": "H_ZZ1hVB2Km2dT_zT4iOHc481PEc",
+    "xc": "GGA",
+    "formula_descriptive": "NiS2",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "sphalerite",
+    "elements": [
+      "S",
+      "Zn"
+    ],
+    "formula": "SZn",
+    "space_group": 216,
+    "textbook_magnetic": "NM",
+    "n_entries_at_sg": 210,
+    "entry_id": "-J7i64bEIPWdGrZLokHVx-37BKr_",
+    "xc": "GGA",
+    "formula_descriptive": "SZn",
+    "ordering_from_search": null,
+    "status": "ERR TimeoutError: The read operation timed out"
+  },
+  {
+    "mineral": "wurtzite",
+    "elements": [
+      "S",
+      "Zn"
+    ],
+    "formula": "SZn",
+    "space_group": 186,
+    "textbook_magnetic": "NM",
+    "n_entries_at_sg": 62,
+    "entry_id": "-tC9OpLKuNnL7-5ubBUZX8T_5u6P",
+    "xc": "GGA",
+    "formula_descriptive": "ZnS",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  },
+  {
+    "mineral": "greenockite",
+    "elements": [
+      "Cd",
+      "S"
+    ],
+    "formula": "CdS",
+    "space_group": 186,
+    "textbook_magnetic": "NM",
+    "n_entries_at_sg": 22,
+    "entry_id": "0E6tOVRhjYZwW0hIlHqIkXVwlIc_",
+    "xc": "GGA",
+    "formula_descriptive": "CdS",
+    "ordering_from_search": null,
+    "archive_magnetic": {
+      "magnetic_block_present": false,
+      "magnetic_ordering": null,
+      "magnetic_keys": []
+    },
+    "status": "ok"
+  }
+]

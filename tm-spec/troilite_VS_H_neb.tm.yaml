@@ -1,0 +1,118 @@
+# TM-Spec v0.3 artefact: troilite FeS, V_S + H_i proton-hop NEB, with the
+# magnetic pre-flight assessment that distinguishes the endpoint gate from the
+# band gate (manuscript sec.6 "why the band gate is not redundant").
+#
+# The endpoint gate (which sees only the two ends) trips its dM_abs > 0.5 uB
+# criterion on the 0.52 uB end-to-end drift and returns NO-GO_SINGLE_SHEET; the
+# band gate (which sees the whole trajectory) returns GO, because no *adjacent*
+# |dM_abs| exceeds 0.5 uB and M_total is identically zero (AFM order preserved).
+# The band gate is the arbiter and the 375 meV barrier is valid on one AFM sheet.
+#
+# Source: data/cases/troilite_prodromos_verdict.json (per-image moments + verdicts).
+
+spec: tm-spec/0.3
+kind: NEBCalculation
+id: tm.troilite.vs.hint.neb.2026-06-04
+schema_url: https://exopoiesis.github.io/tm-spec/0.3.json
+
+# -- 1. STRUCTURE ---------------------------------------------------------
+structure:
+  formula: Fe12S11H1            # 12 Fe (6 up / 6 down AFM) + V_S + interstitial H
+  space_group: { number: 190, symbol: P-6_2c }   # low-T troilite superstructure
+  pbc: [true, true, true]
+  notes: >
+    Low-temperature AFM troilite (alternating Fe spin planes), NOT the idealized
+    high-T NiAs-type MP entry mp-2099 (P6_3/mmc), which is the wrong structure and
+    spin state (the sec.7.2 computed-vs-experiment trap).
+
+# -- 2. DEFECTS -----------------------------------------------------------
+defects:
+  reactions:
+    - "S_S^x -> V_S^.. + S(removed)"
+    - "nil   -> H_i^.  + e'"
+  population:
+    V_S:   { count: 1 }
+    H_int: { count: 1, site: vacancy_neighbour }
+
+# -- 3. MAGNETIC STATE ----------------------------------------------------
+magnetic:
+  state: AFM
+  collinear: true
+  T_N_K: 588                    # experimentally established AFM troilite ground state
+  notes: "M_total == 0 at every image (AFM order preserved throughout the band)."
+
+# -- 4. CALCULATION -------------------------------------------------------
+calculation:
+  method: DFT
+  level:
+    xc: PBE                     # U = 0 (intended on-site U silently dropped by the
+                                #        ASE>=3.23 QE interface; zero Hubbard energy
+                                #        verified in all seven images, 2026-06-04)
+    basis: { kind: plane_waves, cutoff_Ry: 60, rho_cutoff_Ry: 240 }
+    pseudopotential: ONCV PBE
+    spin: collinear             # nspin = 2
+  code: { name: QuantumESPRESSO, version: "7.5" }
+
+# -- 5. WORKFLOW (NEB) ----------------------------------------------------
+workflow:
+  kind: NEB
+  stage: production
+  n_images: 7
+  optimizer: FIRE
+  prewrap: idpp
+
+# -- 6. PRE-FLIGHT (gate verdicts produced before/around the band) --------
+preflight:
+  engine: { name: prodromos, version: "0.1.0" }
+  verdict: GO                   # the band gate is the arbiter -> GO
+  confidence: high
+  gates:
+    - id: M0_electron_parity
+      verdict: NSPIN2            # odd/open-shell Fe-S cell -> spin-polarized treatment
+      confidence: high
+      reasons:
+        - "Open-shell Fe present; AFM troilite requires nspin = 2."
+    - id: endpoint_dM_gate
+      verdict: NO-GO_SINGLE_SHEET
+      confidence: medium
+      observed: { dM_total_uB: 0.0, dM_abs_uB: 0.52, t_abs_uB: 0.5 }
+      reasons:
+        - "End-to-end |dM_abs| = 0.52 uB exceeds the 0.5 uB endpoint threshold."
+        - "Endpoint-only screen over-flags a slow monotonic magnitude drift."
+      next_actions:
+        - "Defer to the in-band gate when a full trajectory exists."
+        - "Relative form dM_abs / N_mag = 0.52 / 12 = 0.043 uB/Fe -> GO."
+    - id: inband_dM_gate
+      verdict: GO
+      confidence: high
+      observed:
+        M_abs_uB:   [39.57, 39.67, 39.75, 39.88, 39.98, 39.97, 40.09]
+        M_total_uB: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        max_adjacent_dM_abs_uB: 0.13
+        t_abs_uB: 0.5
+      reasons:
+        - "No adjacent |dM_abs| exceeds 0.5 uB (largest 0.13 uB); M_total identically 0."
+        - "Monotonic, gradual magnitude drift -> single AFM sheet, not a sheet crossing."
+
+# -- 7. RESULTS -----------------------------------------------------------
+results:
+  Ea_forward_eV: 0.375
+  delta_E_rxn_eV: 0.0
+  status: RETROSPECTIVE
+  paper_quotable: true
+  notes: >
+    375 meV barrier valid on a single AFM sheet. Troilite is the case that most
+    sharply distinguishes the endpoint gate (over-flags) from the band gate
+    (correct GO); see manuscript sec.6 and the relative-dM_abs/N_mag refinement.
+
+# -- 8. SANITY GATES (post-hoc) -------------------------------------------
+sanity:
+  - { id: G05_scf_converged,   rule: "all images SCF converged",          pass: true }
+  - { id: G_U0_no_hubbard,     rule: "zero Hubbard energy (PBE, U=0)",      observed: "0 in all 7 images", pass: true }
+  - { id: G_afm_preserved,     rule: "M_total == 0 across the band",        observed: "0 at every image",  pass: true }
+
+# -- 9. PROVENANCE --------------------------------------------------------
+provenance:
+  date: "2026-06-04"
+  author: igor@exopoiesis.space
+  data_ref: data/cases/troilite_prodromos_verdict.json

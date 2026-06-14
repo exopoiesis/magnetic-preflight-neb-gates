@@ -1,0 +1,51 @@
+{
+ "case": "troilite FeS V_S+H NEB (our s67->harvest, AFM 6up/6down, PBE U=0 [intended U silently dropped by ASE-QE; zero Hubbard energy verified], E_a=0.375 eV)",
+ "per_image": [
+  {
+   "label": "endA",
+   "M_total": 0.0,
+   "M_abs": 39.57
+  },
+  {
+   "label": "neb_img01",
+   "M_total": -0.0,
+   "M_abs": 39.67
+  },
+  {
+   "label": "neb_img02",
+   "M_total": 0.0,
+   "M_abs": 39.75
+  },
+  {
+   "label": "neb_img03",
+   "M_total": -0.0,
+   "M_abs": 39.88
+  },
+  {
+   "label": "neb_img04",
+   "M_total": -0.0,
+   "M_abs": 39.98
+  },
+  {
+   "label": "neb_img05",
+   "M_total": -0.0,
+   "M_abs": 39.97
+  },
+  {
+   "label": "endB",
+   "M_total": -0.0,
+   "M_abs": 40.09
+  }
+ ],
+ "endpoint_gate": {
+  "verdict": "NO-GO_SINGLE_SHEET",
+  "dM_total": 0.0,
+  "dM_abs": 0.5200000000000031,
+  "endpoint_split": true
+ },
+ "band_gate": {
+  "verdict": "GO",
+  "sheet_crossing": false,
+  "endpoint_split": false
+ }
+}

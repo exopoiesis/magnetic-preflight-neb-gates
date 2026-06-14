@@ -1,0 +1,48 @@
+{
+ "ZnS_VZn_H": {
+  "label": "ZnS_VZn_H",
+  "nat": 64,
+  "formula": "Zn31 S32 H1",
+  "sg": "F-43m (sphalerite)",
+  "XC_dataset": "control",
+  "Em_dataset_eV": null,
+  "ep_verdict": "N/A",
+  "migrating_ion": "H",
+  "max_disp_A": 1.638,
+  "mlip": "MACE-MP-0 medium (spin-blind, CPU float64)",
+  "endpoint_relax": {
+   "E_ini": -223.8071,
+   "fmax_ini": 0.0458,
+   "E_fin": -223.8071,
+   "fmax_fin": 0.0458,
+   "steps_ini": 27,
+   "steps_fin": 27
+  },
+  "converged": true,
+  "neb_steps": 42,
+  "wall_s": 520.8,
+  "energies_eV": [
+   0.0,
+   0.029,
+   0.1453,
+   0.3004,
+   0.1453,
+   0.029,
+   0.0
+  ],
+  "barrier_fwd_eV": 0.3004,
+  "barrier_rev_eV": 0.3004,
+  "saddle_image": 3,
+  "n_images": 7,
+  "band_fmax": 0.5013,
+  "E_rxn_eV": 0.0,
+  "path_seg_max_A": 0.284,
+  "mic_ok": true,
+  "barrier_vs_Em": {
+   "mlip_barrier_fwd_eV": 0.3004,
+   "Em_dataset_eV": null,
+   "abs_diff_eV": null,
+   "ratio": null
+  }
+ }
+}

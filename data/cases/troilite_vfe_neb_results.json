@@ -1,0 +1,52 @@
+{
+ "troilite_VFe_interplane": {
+  "label": "troilite_VFe_interplane",
+  "nat": 23,
+  "formula": "Fe11 S12",
+  "sg": "P-6_2c (#190)",
+  "XC_dataset": null,
+  "Em_dataset_eV": null,
+  "ep_verdict": "N/A",
+  "migrating_ion": "Fe (vacancy)",
+  "max_disp_A": null,
+  "mlip": "MACE-MP-0 medium (spin-blind, CPU float64)",
+  "endpoint_relax": {
+   "E_ini": -148.0756,
+   "fmax_ini": 0.0476,
+   "E_fin": -148.0756,
+   "fmax_fin": 0.0476,
+   "steps_ini": 57,
+   "steps_fin": 57
+  },
+  "converged": false,
+  "neb_steps": 300,
+  "wall_s": 1827.0,
+  "energies_eV": [
+   0.0,
+   -0.4953,
+   -0.1392,
+   0.7823,
+   4.9758,
+   -0.3588,
+   0.0
+  ],
+  "barrier_fwd_eV": 4.9758,
+  "barrier_rev_eV": 4.9758,
+  "saddle_image": 4,
+  "n_images": 7,
+  "band_fmax": 1.6209,
+  "E_rxn_eV": 0.0,
+  "path_seg_max_A": 0.521,
+  "mic_ok": true,
+  "barrier_vs_Em": {
+   "mlip_barrier_fwd_eV": 4.9758,
+   "Em_dataset_eV": null,
+   "abs_diff_eV": null,
+   "ratio": null
+  }
+ },
+ "troilite_VFe_intraplane": {
+  "label": "troilite_VFe_intraplane",
+  "error": "RuntimeError: MIC interpolation FAILED: seg_max 5.50 A ~ cell 5.96 A (PBC-crossing linear path). Use gitlab/ase."
+ }
+}

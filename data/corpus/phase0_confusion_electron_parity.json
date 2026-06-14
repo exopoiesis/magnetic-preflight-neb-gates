@@ -1,0 +1,175 @@
+{
+  "confusion": {
+    "TP": 5,
+    "FP": 3,
+    "TN": 3,
+    "FN": 0
+  },
+  "metrics": {
+    "sensitivity": 1.0,
+    "specificity": 0.5,
+    "over_conservatism_fp_rate": 0.5
+  },
+  "rows": [
+    {
+      "mineral": "pyrite",
+      "formula": "FeS2",
+      "sg": 205,
+      "xc": "GGA",
+      "n_e": 28,
+      "open_shell_tm": [
+        "Fe"
+      ],
+      "verdict": "NSPIN2_RECOMMENDED",
+      "pred_magnetic": true,
+      "textbook": "NM",
+      "truth_magnetic": false,
+      "cell": "FP"
+    },
+    {
+      "mineral": "marcasite",
+      "formula": "FeS2",
+      "sg": 58,
+      "xc": "GGA",
+      "n_e": 28,
+      "open_shell_tm": [
+        "Fe"
+      ],
+      "verdict": "NSPIN2_RECOMMENDED",
+      "pred_magnetic": true,
+      "textbook": "NM",
+      "truth_magnetic": false,
+      "cell": "FP"
+    },
+    {
+      "mineral": "troilite",
+      "formula": "Fe2S2",
+      "sg": 194,
+      "xc": "GGA",
+      "n_e": 44,
+      "open_shell_tm": [
+        "Fe"
+      ],
+      "verdict": "NSPIN2_RECOMMENDED",
+      "pred_magnetic": true,
+      "textbook": "AFM",
+      "truth_magnetic": true,
+      "cell": "TP"
+    },
+    {
+      "mineral": "mackinawite",
+      "formula": "FeS",
+      "sg": 129,
+      "xc": "GGA",
+      "n_e": 22,
+      "open_shell_tm": [
+        "Fe"
+      ],
+      "verdict": "NSPIN2_RECOMMENDED",
+      "pred_magnetic": true,
+      "textbook": "NM",
+      "truth_magnetic": false,
+      "cell": "FP"
+    },
+    {
+      "mineral": "greigite",
+      "formula": "Fe3S4",
+      "sg": 227,
+      "xc": "GGA",
+      "n_e": 72,
+      "open_shell_tm": [
+        "Fe"
+      ],
+      "verdict": "NSPIN2_RECOMMENDED",
+      "pred_magnetic": true,
+      "textbook": "FERRI",
+      "truth_magnetic": true,
+      "cell": "TP"
+    },
+    {
+      "mineral": "chalcopyrite",
+      "formula": "FeCuS2",
+      "sg": 122,
+      "xc": "GGA",
+      "n_e": 47,
+      "open_shell_tm": [
+        "Cu",
+        "Fe"
+      ],
+      "verdict": "NSPIN2_MANDATORY",
+      "pred_magnetic": true,
+      "textbook": "AFM",
+      "truth_magnetic": true,
+      "cell": "TP"
+    },
+    {
+      "mineral": "cattierite",
+      "formula": "CoS2",
+      "sg": 205,
+      "xc": "GGA",
+      "n_e": 29,
+      "open_shell_tm": [
+        "Co"
+      ],
+      "verdict": "NSPIN2_MANDATORY",
+      "pred_magnetic": true,
+      "textbook": "FM",
+      "truth_magnetic": true,
+      "cell": "TP"
+    },
+    {
+      "mineral": "vaesite",
+      "formula": "NiS2",
+      "sg": 205,
+      "xc": "GGA",
+      "n_e": 30,
+      "open_shell_tm": [
+        "Ni"
+      ],
+      "verdict": "NSPIN2_RECOMMENDED",
+      "pred_magnetic": true,
+      "textbook": "AFM",
+      "truth_magnetic": true,
+      "cell": "TP"
+    },
+    {
+      "mineral": "sphalerite",
+      "formula": "SZn",
+      "sg": 216,
+      "xc": "GGA",
+      "n_e": 26,
+      "open_shell_tm": [],
+      "verdict": "NSPIN1_OK",
+      "pred_magnetic": false,
+      "textbook": "NM",
+      "truth_magnetic": false,
+      "cell": "TN"
+    },
+    {
+      "mineral": "wurtzite",
+      "formula": "ZnS",
+      "sg": 186,
+      "xc": "GGA",
+      "n_e": 26,
+      "open_shell_tm": [],
+      "verdict": "NSPIN1_OK",
+      "pred_magnetic": false,
+      "textbook": "NM",
+      "truth_magnetic": false,
+      "cell": "TN"
+    },
+    {
+      "mineral": "greenockite",
+      "formula": "CdS",
+      "sg": 186,
+      "xc": "GGA",
+      "n_e": 26,
+      "open_shell_tm": [],
+      "verdict": "NSPIN1_OK",
+      "pred_magnetic": false,
+      "textbook": "NM",
+      "truth_magnetic": false,
+      "cell": "TN"
+    }
+  ]
+}

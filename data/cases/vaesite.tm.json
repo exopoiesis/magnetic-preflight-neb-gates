@@ -1,0 +1,71 @@
+{
+  "spec": "tm-spec/0.3",
+  "kind": "SinglePointCalculation",
+  "id": "tm.mp.mp-2282.2026-06-02",
+  "schema_url": "https://exopoiesis.github.io/tm-spec/0.3.json",
+  "structure": {
+    "formula": "NiS2",
+    "chemical_formula_reduced": "NiS2",
+    "pbc": [
+      true,
+      true,
+      true
+    ],
+    "geometry_origin": "dft_relaxed",
+    "space_group": {
+      "number": 205
+    }
+  },
+  "calculation": {
+    "method": "DFT",
+    "code": {
+      "name": "VASP"
+    }
+  },
+  "magnetic": {
+    "state": "AFM-G",
+    "collinear": true,
+    "magmoms_uB": {
+      "0": 1.3,
+      "1": 1.3,
+      "2": -1.3,
+      "3": -1.3,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0,
+      "10": 0.0,
+      "11": 0.0
+    },
+    "surrogate_warning": "MP reports generic AFM; subtype (A/C/G) unspecified -> mapped to AFM-G. MP collinear enumeration in a small cell may also miss the true AFM order."
+  },
+  "results": {
+    "status": "PRELIMINARY",
+    "paper_quotable": false,
+    "notes": "Imported from Materials Project (computed magnetic ground state); XC = MP default GGA/GGA+U (not re-derived). Structure-level magnetic import."
+  },
+  "sanity": [
+    {
+      "id": "G09_geometry_origin",
+      "rule": "geometry_origin dft_relaxed/dft_static",
+      "observed": "dft_relaxed",
+      "pass": true
+    }
+  ],
+  "provenance": {
+    "date": "2026-06-02",
+    "author": "import@mp",
+    "import_source": {
+      "archive": "materials_project",
+      "entry_id": "mp-2282",
+      "url": "https://next-gen.materialsproject.org/materials/mp-2282",
+      "importer": "mp_client.mp_to_tm_spec@0.1"
+    },
+    "compute": {
+      "host": "mp-api",
+      "cost_usd": 0.0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code, data, or the machine-checked proofs, please cite the accompanying paper."
+title: "Magnetic-First Pre-Flight Gates for Well-Posed DFT Nudged Elastic Band Calculations in Transition-Metal Sulfides"
+authors:
+  - family-names: Morozov
+    given-names: "Igor N."
+    orcid: "https://orcid.org/0009-0007-3863-1747"
+    affiliation: "Independent Researcher, Ukraine"
+    email: igor@exopoiesis.space
+year: 2026
+repository-code: "https://github.com/exopoiesis/magnetic-preflight-neb-gates"
+url: "https://exopoiesis.space"
+license: MIT
+keywords:
+  - nudged elastic band
+  - pre-flight gates
+  - spin-sheet continuity
+  - magnetic transition-metal sulfides
+  - electron parity
+  - DFT NEB
+  - foundation machine-learning potentials
+  - Materials Project
+  - MAGNDATA
+  - Lean
+  - machine-checked proofs
+  - Prodromos
+  - tm-spec

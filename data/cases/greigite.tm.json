@@ -1,0 +1,72 @@
+{
+  "spec": "tm-spec/0.3",
+  "kind": "SinglePointCalculation",
+  "id": "tm.mp.mp-21515.2026-06-02",
+  "schema_url": "https://exopoiesis.github.io/tm-spec/0.3.json",
+  "structure": {
+    "formula": "Fe3S4",
+    "chemical_formula_reduced": "Fe3S4",
+    "pbc": [
+      true,
+      true,
+      true
+    ],
+    "geometry_origin": "dft_relaxed",
+    "space_group": {
+      "number": 227
+    }
+  },
+  "calculation": {
+    "method": "DFT",
+    "code": {
+      "name": "VASP"
+    }
+  },
+  "magnetic": {
+    "state": "ferri",
+    "collinear": true,
+    "magmoms_uB": {
+      "0": 2.0,
+      "1": 2.0,
+      "2": 2.0,
+      "3": 2.0,
+      "4": -1.8,
+      "5": -1.8,
+      "6": 0.0,
+      "7": 0.0,
+      "8": 0.0,
+      "9": 0.0,
+      "10": 0.0,
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.0
+    }
+  },
+  "results": {
+    "status": "PRELIMINARY",
+    "paper_quotable": false,
+    "notes": "Imported from Materials Project (computed magnetic ground state); XC = MP default GGA/GGA+U (not re-derived). Structure-level magnetic import."
+  },
+  "sanity": [
+    {
+      "id": "G09_geometry_origin",
+      "rule": "geometry_origin dft_relaxed/dft_static",
+      "observed": "dft_relaxed",
+      "pass": true
+    }
+  ],
+  "provenance": {
+    "date": "2026-06-02",
+    "author": "import@mp",
+    "import_source": {
+      "archive": "materials_project",
+      "entry_id": "mp-21515",
+      "url": "https://next-gen.materialsproject.org/materials/mp-21515",
+      "importer": "mp_client.mp_to_tm_spec@0.1"
+    },
+    "compute": {
+      "host": "mp-api",
+      "cost_usd": 0.0
+    }
+  }
+}

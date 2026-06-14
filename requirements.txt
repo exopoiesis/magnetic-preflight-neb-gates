@@ -1,0 +1,19 @@
+# Core (gate drivers + figures + geometry handling)
+ase>=3.23
+numpy
+matplotlib
+
+# The pre-flight gates themselves:
+#   prodromos       https://github.com/exopoiesis/prodromos   (pip install from source)
+# Corpus drivers query the Materials Project (set MP_API_KEY) and MAGNDATA (Bilbao).
+
+# Foundation MLIP (for the battery reproduction, scripts/mlip_battery_neb.py) -- install per
+# its own instructions:
+#   mace-torch      (MACE-MP-0 medium)   https://github.com/ACEsuit/mace
+
+# DFT (case-study bands) is EXTERNAL:
+#   Quantum ESPRESSO 7.5 (pw.x, GPU build) on PATH, invoked via mpirun;
+#   ONCV PBE norm-conserving pseudopotentials for Fe, S, H (QE/PseudoDojo).
+
+# Proofs (proofs/PreflightGates.lean) are verified with Lean 4 + mathlib (external toolchain;
+# see proofs/README.md) -- NOT a Python dependency.

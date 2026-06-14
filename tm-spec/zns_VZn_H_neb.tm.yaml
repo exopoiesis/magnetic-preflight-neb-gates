@@ -1,0 +1,105 @@
+# TM-Spec v0.3 artefact: sphalerite ZnS, V_Zn + H_i proton-hop NEB -- the
+# diamagnetic NEGATIVE CONTROL (manuscript sec.6). The gate must say GO: removing
+# a closed-shell Zn and adding an undercoordinated H makes the cell odd-electron,
+# so electron_parity flags NSPIN2, but the cascade clears it (no open-shell TM,
+# moment collapses to ~0) to NSPIN1_OK -> GO. The MLIP barrier is then a valid
+# estimator precisely because the gate certified nspin = 1.
+#
+# Source: data/cases/zns_vznh_neb_results.json + zns_vznh_manifest.json.
+
+spec: tm-spec/0.3
+kind: NEBCalculation
+id: tm.zns.vzn.hint.neb.2026-06-03
+schema_url: https://exopoiesis.github.io/tm-spec/0.3.json
+
+# -- 1. STRUCTURE ---------------------------------------------------------
+structure:
+  formula: Zn31S32H1            # 64-atom 2x2x2 sphalerite supercell: 1 V_Zn + 1 H_i
+  space_group: { number: 216, symbol: F-43m }
+  supercell: [2, 2, 2]
+  pbc: [true, true, true]
+  notes: "Verified geometry: d(S-H) = 1.34 A, d(H-Zn) = 3.06 A, hop 1.64 A."
+
+# -- 2. DEFECTS -----------------------------------------------------------
+defects:
+  reactions:
+    - "Zn_Zn^x -> V_Zn'' + Zn(removed)"
+    - "nil     -> H_i^.  + e'"
+  population:
+    V_Zn:  { count: 1 }
+    H_int: { count: 1, site: S_anchor }
+
+# -- 3. MAGNETIC STATE ----------------------------------------------------
+magnetic:
+  state: NM                     # closed-shell d10 host -> diamagnetic
+  collinear: true
+  magmoms_uB: {}
+  notes: "Zn d10 diamagnetism (textbook; confirmed by the ZnS true-negatives in the sec.7 corpus)."
+
+# -- 4. CALCULATION -------------------------------------------------------
+calculation:
+  method: MLIP
+  level:
+    model: MACE-MP-0 (medium, foundation/0 checkpoint)
+    precision: float64
+    spin: none                  # certified nspin = 1 by the cascade
+  notes: "spin-blind MLIP is a VALID estimator here because the gate certified nspin = 1."
+
+# -- 5. WORKFLOW (NEB) ----------------------------------------------------
+workflow:
+  kind: NEB
+  stage: production
+  n_images: 7
+  optimizer: FIRE
+  prewrap: idpp
+  converged: true
+  band_fmax_eV_per_A: 0.501
+
+# -- 6. PRE-FLIGHT (gate verdicts) ----------------------------------------
+preflight:
+  engine: { name: prodromos, version: "0.1.0" }
+  verdict: GO
+  confidence: high
+  gates:
+    - id: M0_electron_parity
+      verdict: NSPIN2            # vacancy-parity: V_Zn (even Z) + H (Z=1) -> odd-electron
+      confidence: high
+      reasons:
+        - "Removing a closed-shell Zn and adding an undercoordinated H makes the defect cell odd-electron."
+        - "High-sensitivity flag (cell not provably closed-shell), NOT a false positive."
+      next_actions:
+        - "Run the spin_collapse moment check before committing to nspin = 2."
+    - id: M1_spin_collapse
+      verdict: NSPIN1_OK         # no open-shell TM + moment relaxes to ~0 -> cleared
+      confidence: high
+      reasons:
+        - "No open-shell transition metal present; seeded moment collapses to ~0 (d10 host)."
+        - "Cascade reclassifies the parity flag to NSPIN1_OK."
+    - id: endpoint_dM_gate
+      verdict: GO
+      confidence: high
+      reasons:
+        - "Diamagnetic: no spin-sheet structure -> no NO-GO_SINGLE_SHEET on a non-magnetic system."
+
+# -- 7. RESULTS -----------------------------------------------------------
+results:
+  Ea_forward_eV: 0.300
+  delta_E_rxn_eV: 0.0
+  status: CONTROL
+  paper_quotable: true
+  notes: >
+    Negative control: a clean ~0.30 eV migration barrier on a diamagnetic host.
+    Demonstrates the magnetic gate does not raise a false NO-GO_SINGLE_SHEET, and
+    turns the sec.6 verdict table into a confusion matrix.
+
+# -- 8. SANITY GATES (post-hoc) -------------------------------------------
+sanity:
+  - { id: G05_neb_converged,    rule: "band_fmax below target",   observed: 0.501, pass: true }
+  - { id: G_dia_zero_moment,    rule: "no spurious magmoms (d10)", observed: "all zero", pass: true }
+  - { id: G_endpoint_symmetry,  rule: "|E_A - E_B| ~ 0 (symmetric hop)", observed: 0.0, pass: true }
+
+# -- 9. PROVENANCE --------------------------------------------------------
+provenance:
+  date: "2026-06-03"
+  author: igor@exopoiesis.space
+  data_ref: data/cases/zns_vznh_neb_results.json
