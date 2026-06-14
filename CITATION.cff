@@ -10,6 +10,7 @@ authors:
 year: 2026
 repository-code: "https://github.com/exopoiesis/magnetic-preflight-neb-gates"
 url: "https://exopoiesis.space"
+doi: "10.5281/zenodo.20690940"
 license: MIT
 keywords:
   - nudged elastic band

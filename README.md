@@ -76,7 +76,7 @@ tables and figures.
 
 ## Citing
 
-See `CITATION.cff`. A Zenodo archive DOI will be added on release.
+See `CITATION.cff`. Archived release: Zenodo DOI [10.5281/zenodo.20690940](https://doi.org/10.5281/zenodo.20690940).
 
 ## License
 
