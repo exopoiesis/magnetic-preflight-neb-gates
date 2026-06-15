@@ -1,5 +1,8 @@
 # Magnetic-first pre-flight gates for well-posed DFT NEB
 
+![tests](https://github.com/exopoiesis/magnetic-preflight-neb-gates/actions/workflows/ci.yml/badge.svg)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20690940.svg)](https://doi.org/10.5281/zenodo.20690940)
+
 Code, data, and machine-checked proofs accompanying the manuscript:
 
 > **Magnetic-First Pre-Flight Gates for Well-Posed DFT Nudged Elastic Band Calculations in
@@ -67,6 +70,19 @@ pip install -r requirements.txt
 Raw DFT wavefunction/charge-density dumps are **not** archived (multi-GB, regenerable from the
 provided inputs); `data/` holds the harvested gate verdicts, moments, and barriers behind the paper's
 tables and figures.
+
+## Tests
+
+A CPU-only test suite (`tests/`, run with `pytest`; CI: `.github/workflows/ci.yml`) guards the
+parts that run without prodromos / DFT / MLIP / Lean:
+
+- **`test_tmspec_valid.py`** — every TM-Spec artefact is well-formed and carries `spec/kind/id`:
+  the `tm-spec/*.tm.yaml` records and the `data/cases/*.tm.json` prodromos cases; ids are unique.
+- **`test_data_integrity.py`** — every bundled `data/**/*.json` parses (no corruption) and the
+  battery-reproduction results carry the expected structure.
+
+The gate drivers (prodromos), the MLIP battery reproduction, the DFT bands, and the Lean proofs
+need their own external toolchains and are documented but not CI-tested.
 
 ## Related
 

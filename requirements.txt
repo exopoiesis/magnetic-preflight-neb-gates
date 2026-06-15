@@ -2,6 +2,8 @@
 ase>=3.23
 numpy
 matplotlib
+PyYAML        # TM-Spec parsing/validation (tests/)
+pytest        # CPU test suite (tests/)
 
 # The pre-flight gates themselves:
 #   prodromos       https://github.com/exopoiesis/prodromos   (pip install from source)
